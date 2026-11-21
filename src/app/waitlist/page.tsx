@@ -16,19 +16,10 @@ export default function WaitlistPage() {
     setStatus("sending");
     setMessage("");
     try {
-      const response = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          restaurantSlug: "tipico",
-          guestName: name,
-          phone,
-          partySize: Number(people),
-          consent,
-        }),
-      });
-      const result = await response.json();
-      if (!response.ok) throw new Error(result.error ?? "No se ha podido registrar la solicitud.");
+      await new Promise((resolve) => setTimeout(resolve, 300));
+      const entries = JSON.parse(localStorage.getItem("tipico-demo-waitlist") ?? "[]");
+      entries.unshift({ id: crypto.randomUUID(), name, phone, people: Number(people), status: "Esperando", createdAt: new Date().toISOString() });
+      localStorage.setItem("tipico-demo-waitlist", JSON.stringify(entries));
       setStatus("success");
       setMessage("Solicitud registrada por el restaurante.");
       setName("");
@@ -45,7 +36,7 @@ export default function WaitlistPage() {
       <Header />
       <header className="page-hero"><p className="eyebrow">Lista de espera</p><h1>Tu turno</h1></header>
       <main className="page-content">
-        <p className="notice">Los datos se utilizan únicamente para gestionar la lista de espera del restaurante.</p>
+        <p className="notice">Demo local sin Supabase. Los datos no se sincronizan entre dispositivos y pueden eliminarse borrando los datos del navegador.</p>
         <form
           onSubmit={submit}
           style={{ display: "grid", gridTemplateColumns: "1fr 0.5fr 1fr", gap: 10, margin: "36px 0" }}

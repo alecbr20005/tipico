@@ -1,31 +1,25 @@
-# Arquitectura propuesta
+# Arquitectura actual
 
-## Sistemas
+## Experiencia
 
-- `src/app`: experiencia pública y rutas privadas.
-- `src/app/api`: operaciones servidor-validadas.
-- `src/lib/supabase`: clientes Supabase para navegador y servidor.
-- `supabase/migrations`: esquema, relaciones y políticas RLS.
+- Next.js App Router.
+- Datos locales de demostración en `src/lib/demo-store.ts`.
+- Persistencia del navegador mediante `localStorage`.
+- OCR mediante `tesseract.js` ejecutado en el navegador.
+- Generador de texto determinista sin IA externa.
 
-## Datos
+## Recorrido
 
-Restaurantes, perfiles, roles, categorías, platos, traducciones, alérgenos, imágenes, modelos 3D, galería, lista de espera y analítica futura se gestionan en Postgres.
+El recorrido utiliza la fotografía real del local mediante cambios de posición y escala. Se presenta como recreación aproximada, no como escaneo exacto.
 
-## Seguridad
+## Carta y platos
 
-- Supabase Auth para sesiones.
-- Perfiles con roles `admin`, `manager` y `staff`.
-- RLS en todas las tablas de datos privados.
-- Validación Zod en la API de la lista de espera.
-- Sin claves privadas en el cliente.
+Las cinco fotografías se utilizan sin inventar nombres oficiales. Las vistas individuales muestran datos pendientes cuando no están validados.
 
-## Estado actual
+## Demo no conectada
 
-La experiencia pública no presenta datos provisionales como oficiales. La carta y las recomendaciones permanecen vacías hasta que existan datos validados. La lista de espera requiere configuración de Supabase y no usa almacenamiento local.
+Waitlist y Business no usan Supabase ni una API compartida. Los cambios permanecen en el navegador del usuario.
 
-## Pendientes externos
+## Producción futura
 
-- Autorizar y aportar recursos gráficos oficiales.
-- Confirmar platos, datos gastronómicos y traducciones.
-- Crear usuarios, roles y ejecutar migraciones en Supabase.
-- Crear modelos 3D reales o mantener el fallback fotográfico.
+La integración real requerirá backend, autenticación, migraciones, roles, RLS y recursos oficiales confirmados. No se ha configurado en esta rama.

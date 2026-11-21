@@ -2,8 +2,11 @@
 
 import Header from "@/components/Header";
 import Link from "next/link";
+import ShareButtons from "@/components/ShareButtons";
+import { useI18n } from "@/lib/i18n";
 
 export default function HomePage() {
+  const { t } = useI18n();
   return (
     <>
       <Header />
@@ -16,14 +19,16 @@ export default function HomePage() {
           </div>
           <div className="hero-copy">
             <p className="eyebrow">Pagés del Corro 86 · Triana</p>
-            <h1 id="hero-title">SAME SAME<br /><em>BUT DIFFERENT.</em></h1>
-            <p className="hero-note">Una barra de tapas donde tradición y personalidad<br />se sirven a la misma mesa.</p>
+            <h1 id="hero-title">TÍPICO.<br /><em>NOTHING TYPICAL.</em></h1>
+            <p className="hero-note">SAME SAME. BUT DIFFERENT.<br />Una forma diferente de vivir las tapas.</p>
             <div className="hero-links">
-              <Link href="/carta" className="button button-gold">Explorar carta</Link>
-              <Link href="/descubrir" className="button button-ghost">Descubrir Típico</Link>
+              <Link href="/carta" className="button button-gold">{t.explore}</Link>
+              <Link href="/descubrir" className="button button-ghost">{t.discover}</Link>
             </div>
           </div>
         </section>
+
+        <ShareButtons />
 
         <section className="tour-preview" aria-labelledby="tour-preview-title">
           <div className="tour-preview-image" role="img" aria-label="Interior real de Típico Barra de Tapas" />
