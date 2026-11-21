@@ -2,17 +2,8 @@
 
 import Header from "@/components/Header";
 import Link from "next/link";
-import { menu } from "@/data/menu";
-import { useState } from "react";
 
 export default function HomePage() {
-  const [active, setActive] = useState(0);
-  const dish = menu[active];
-
-  const move = (direction: number) => {
-    setActive((current) => (current + direction + menu.length) % menu.length);
-  };
-
   return (
     <>
       <Header />
@@ -30,47 +21,6 @@ export default function HomePage() {
               <Link href="/carta" className="button button-gold">Explorar carta</Link>
               <Link href="/descubrir" className="button button-ghost">Descubrir Típico</Link>
             </div>
-          </div>
-          <p className="asset-note">Fotografía oficial pendiente de incorporar</p>
-        </section>
-
-        <section className="dishes-section" aria-labelledby="dishes-title">
-          <div className="section-heading">
-            <p className="eyebrow">Selección de cocina</p>
-            <h2 id="dishes-title">Five dishes.<br /><em>One identity.</em></h2>
-            <p>Una presentación destacada. No representa la totalidad de la carta.</p>
-          </div>
-
-          <div className="dish-stage" style={{ "--dish-index": active } as React.CSSProperties}>
-            <button className="dish-arrow previous" onClick={() => move(-1)} aria-label="Plato anterior">←</button>
-            <article className="dish-card" key={dish.id}>
-              <div className="dish-visual">
-                <div className="dish-monogram">{String(active + 1).padStart(2, "0")}</div>
-                <p>Fotografía auténtica pendiente</p>
-              </div>
-              <div className="dish-copy">
-                <p className="dish-index">{String(active + 1).padStart(2, "0")} / {String(menu.length).padStart(2, "0")}</p>
-                <p className="eyebrow">{dish.category}</p>
-                <h3>{dish.name}</h3>
-                <p className="dish-status">Precio pendiente de confirmación</p>
-                <p className="source-note">{dish.sourceNote}</p>
-              </div>
-            </article>
-            <button className="dish-arrow next" onClick={() => move(1)} aria-label="Plato siguiente">→</button>
-          </div>
-
-          <div className="dish-tabs" role="tablist" aria-label="Seleccionar plato destacado">
-            {menu.map((item, index) => (
-              <button
-                key={item.id}
-                role="tab"
-                aria-selected={active === index}
-                onClick={() => setActive(index)}
-              >
-                <span>{String(index + 1).padStart(2, "0")}</span>
-                {item.name}
-              </button>
-            ))}
           </div>
         </section>
 

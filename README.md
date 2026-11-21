@@ -35,3 +35,35 @@ Abrir http://localhost:3000.
 6. Sustituir el marcador visual por el diseño oficial.
 
 No publicar ni desplazar a producción sin autorización.
+
+## Arquitectura
+
+- Frontend público y rutas privadas: Next.js 16 / React / TypeScript.
+- Datos privados y compartidos: Supabase Postgres.
+- Identidad de usuarios y roles: Supabase Auth.
+- Seguridad: políticas RLS y validación Zod en API.
+- Espera: API compartida con persistencia en Supabase.
+- Contenido y carta: diseñados para gestionarse desde tablas administrables.
+- Sin datos personales ficticios, sin contraseñas demo y sin métricas simuladas.
+
+## Supabase
+
+Aplicar la migración `supabase/migrations/202611210001_initial_schema.sql` desde el proyecto de Supabase.
+
+Variables necesarias:
+
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY` (solo para procesos administrativos protegidos)
+- `NEXT_PUBLIC_SITE_URL`
+
+No publiques la clave service-role en variables `NEXT_PUBLIC_*`.
+
+## Recursos pendientes
+
+- Archivo original del logotipo.
+- Fotografías oficiales de Típico.
+- Fotografía y selección final de los cinco platos.
+- Modelos GLB/USDZ reales.
+- Validación de carta, precios, alérgenos e idiomas.
+- Credenciales de Supabase y creación de usuarios administrativos.
