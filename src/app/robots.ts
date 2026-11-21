@@ -4,7 +4,7 @@ export default function robots(): MetadataRoute.Robots {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://tipico2.vercel.app";
   return {
     rules: [
-      { userAgent: "*", allow: "/", disallow: ["/business/dashboard/", "/api/"] },
+      { userAgent: "*", allow: "/", disallow: ["/business/", "/api/"] },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
   };
