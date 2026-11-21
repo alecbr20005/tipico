@@ -22,6 +22,7 @@ export default function Header() {
       <nav className={`main-nav ${open ? "is-open" : ""}`} aria-label="Navegación principal">
         <Link href="/carta" onClick={() => setOpen(false)}>Carta</Link>
         <Link href="/descubrir" onClick={() => setOpen(false)}>Descubrir</Link>
+        <Link href="/recorrido" onClick={() => setOpen(false)}>Recorrido 3D</Link>
         <Link href="/guide" onClick={() => setOpen(false)}>Food guide</Link>
         <Link href="/waitlist" onClick={() => setOpen(false)}>Lista de espera</Link>
       </nav>

@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import OfficialGallery from "@/components/OfficialGallery";
 
 export default function DescubrirPage() {
   return (
@@ -21,6 +22,12 @@ export default function DescubrirPage() {
             <h2 style={{ fontFamily: "Instrument Serif, Georgia, serif", fontSize: 52, fontWeight: 400 }}>SAME SAME<br /><em>BUT DIFFERENT.</em></h2>
           </article>
         </div>
+        <section style={{ marginTop: 70 }} aria-labelledby="gallery-title">
+          <p className="eyebrow">Material compartido</p>
+          <h2 id="gallery-title" style={{ fontFamily: "Instrument Serif, Georgia, serif", fontSize: 58, fontWeight: 400, margin: "12px 0 30px" }}>Galería de Típico</h2>
+          <OfficialGallery />
+          <p style={{ color: "#77736b", fontSize: 12, marginTop: 16 }}>Las fotografías se utilizan como material proporcionado por el propietario. Los nombres de los platos permanecen pendientes de confirmación.</p>
+        </section>
       </main>
     </div>
   );

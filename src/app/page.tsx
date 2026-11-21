@@ -10,6 +10,7 @@ export default function HomePage() {
       <main>
         <section className="hero" aria-labelledby="hero-title">
           <div className="hero-art" aria-hidden="true">
+            <div className="hero-photo" />
             <div className="hero-grain" />
             <div className="hero-mark">T</div>
           </div>
@@ -21,6 +22,16 @@ export default function HomePage() {
               <Link href="/carta" className="button button-gold">Explorar carta</Link>
               <Link href="/descubrir" className="button button-ghost">Descubrir Típico</Link>
             </div>
+          </div>
+        </section>
+
+        <section className="tour-preview" aria-labelledby="tour-preview-title">
+          <div className="tour-preview-image" role="img" aria-label="Interior real de Típico Barra de Tapas" />
+          <div className="tour-preview-copy">
+            <p className="eyebrow">Una visita antes de llegar</p>
+            <h2 id="tour-preview-title">Recorrido visual<br /><em>por Típico.</em></h2>
+            <p>Explora la barra y el ambiente a partir de una fotografía real. La experiencia se identifica como recreación aproximada.</p>
+            <Link href="/recorrido" className="text-link dark">Entrar al recorrido <span>↗</span></Link>
           </div>
         </section>
 

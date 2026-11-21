@@ -1,8 +1,20 @@
 # Inventario de recursos
 
 ## Recursos disponibles
+Las siguientes imágenes fueron adjuntas por el propietario y se han incorporado a `public/images/`:
 
-No hay archivos oficiales de logotipo, fotografías, vídeos o modelos 3D en este repositorio.
+| Archivo | Uso actual | Autorización |
+|---|---|---|
+| `restaurant/tipico-interior.png` | Hero y recorrido visual aproximado | Proporcionada por el propietario |
+| `dishes/gambas-sarten.png` | Galería gastronómica | Proporcionada por el propietario |
+| `dishes/plato-negro.png` | Galería gastronómica | Proporcionada por el propietario |
+| `dishes/croquetas-piedra.png` | Galería gastronómica | Proporcionada por el propietario |
+| `dishes/sopa-servicio.png` | Galería gastronómica | Proporcionada por el propietario |
+| `dishes/plato-negro-largo.png` | Galería gastronómica | Proporcionada por el propietario |
+
+No se ha confirmado el nombre oficial de los platos representados en las fotografías. El recorrido utiliza una única imagen y se identifica como recreación aproximada, no como escaneo exacto.
+
+Se conservan las versiones PNG originales y se sirven versiones WebP optimizadas de cada recurso.
 
 ## Recursos pendientes
 
